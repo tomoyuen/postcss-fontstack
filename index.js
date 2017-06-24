@@ -1,7 +1,9 @@
-const postcss = require('postcss');
+var postcss = require('postcss');
 
 module.exports = postcss.plugin('fontstack', function fontstack(options) {
-  return function(css) {
+  options = options || {};
+
+  return function(root, result) {
     options = options || {};
   }
 });

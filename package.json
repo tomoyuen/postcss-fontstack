@@ -4,7 +4,7 @@
   "description": "easy insertion of font stacks into font-family declarations",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest && eslint *.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,17 @@
   },
   "homepage": "https://github.com/tomoyuen/postcss-fontstack#readme",
   "devDependencies": {
+    "eslint": "^4.1.0",
+    "eslint-config-postcss": "^2.0.2",
+    "jest": "^20.0.4"
+  },
+  "dependencies": {
     "postcss": "^6.0.3"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-postcss",
+    "env": {
+      "jest": true
+    }
   }
 }
