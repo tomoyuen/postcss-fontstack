@@ -27,11 +27,5 @@
   },
   "dependencies": {
     "postcss": "^6.0.3"
-  },
-  "eslintConfig": {
-    "extends": "eslint-config-postcss",
-    "env": {
-      "jest": true
-    }
   }
 }

@@ -1,9 +1,27 @@
-var postcss = require('postcss');
+const postcss = require('postcss');
+let fontstacks = require('./fontstacks-config.js');
 
-module.exports = postcss.plugin('fontstack', function fontstack(options) {
-  options = options || {};
+function toTitleCase(str) {
+  return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+}
 
-  return function(root, result) {
-    options = options || {};
-  }
+module.exports = postcss.plugin('fontstack', (options) => {
+  fontstacks = Object.assign(fontstacks, options.fontstacks);
+
+  return (root) => {
+    root.walkRules((rule) => {
+      rule.walkDecls((decl) => {
+        const value = decl.value;
+        if (value.indexOf( 'fontstack(' ) !== -1) {
+          console.log('found fontstack');
+          let fontstackRequested = value.match(/\(([^)]+)\)/)[1].replace(/["']/g, '');
+          fontstackRequested = toTitleCase(fontstackRequested);
+          const fontstack = fontstacks[fontstackRequested];
+          const firstFont = value.substr(0, value.indexOf('fontstack('));
+          const newValue = firstFont + fontstack;
+          decl.value = newValue;
+        }
+      });
+    });
+  };
 });
