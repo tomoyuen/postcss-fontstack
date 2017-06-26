@@ -1,6 +1,6 @@
 const postcss = require('postcss');
 
-const plugin = require('./');
+const plugin = require('../src/');
 
 function run(input, output, opts) {
   return postcss([ plugin(opts) ]).process(input)
