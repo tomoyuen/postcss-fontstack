@@ -39,6 +39,5 @@
   "jest": {
     "transform": {},
     "verbose": true,
-    "testPathIgnorePatterns": []
   }
 }
