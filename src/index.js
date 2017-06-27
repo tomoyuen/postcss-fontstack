@@ -13,7 +13,6 @@ module.exports = postcss.plugin('fontstack', (options) => {
       rule.walkDecls((decl) => {
         const value = decl.value;
         if (value.indexOf( 'fontstack(' ) !== -1) {
-          console.log('found fontstack');
           let fontstackRequested = value.match(/\(([^)]+)\)/)[1].replace(/["']/g, '');
           fontstackRequested = toTitleCase(fontstackRequested);
           const fontstack = fontstacks[fontstackRequested];
