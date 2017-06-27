@@ -38,6 +38,6 @@
   },
   "jest": {
     "transform": {},
-    "verbose": true,
+    "verbose": true
   }
 }
