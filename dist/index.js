@@ -1,8 +1,9 @@
-'use strict';
+"use strict";
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var postcss = require('postcss');
+
 var fontstacks = require('./fontstacks-config.js');
 
 function toTitleCase(str) {
@@ -13,13 +14,12 @@ function toTitleCase(str) {
 
 module.exports = postcss.plugin('fontstack', function (options) {
   fontstacks = _extends(fontstacks, options.fontstacks);
-
   return function (root) {
     root.walkRules(function (rule) {
       rule.walkDecls(function (decl) {
         var value = decl.value;
+
         if (value.indexOf('fontstack(') !== -1) {
-          console.log('found fontstack');
           var fontstackRequested = value.match(/\(([^)]+)\)/)[1].replace(/["']/g, '');
           fontstackRequested = toTitleCase(fontstackRequested);
           var fontstack = fontstacks[fontstackRequested];

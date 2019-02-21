@@ -18,4 +18,4 @@ module.exports = {
   'Papyrus': 'Papyrus, fantasy',
   // Script 手写字体
   'Brush Script MT': '"Brush Script MT", cursive'
-};
+}
