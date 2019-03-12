@@ -1,6 +1,6 @@
 {
   "name": "postcss-fontstack",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "easy insertion of font stacks into font-family declarations",
   "main": "dist/index.js",
   "scripts": {
