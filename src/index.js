@@ -5,7 +5,7 @@ function toTitleCase (str) {
   return str.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase())
 }
 
-module.exports = postcss.plugin('fontstack', options => {
+module.exports = postcss.plugin('fontstack', (options = {}) => {
   fontstacks = Object.assign(fontstacks, options.fontstacks)
 
   return root => {

@@ -12,7 +12,8 @@ function toTitleCase(str) {
   });
 }
 
-module.exports = postcss.plugin('fontstack', function (options) {
+module.exports = postcss.plugin('fontstack', function () {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   fontstacks = _extends(fontstacks, options.fontstacks);
   return function (root) {
     root.walkRules(function (rule) {
