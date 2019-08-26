@@ -7,9 +7,17 @@ body {
   font-family: 'Open Sans', fontstack('Arial');
 }
 
+h2 {
+  font-family: fontstack('');
+}
+
 /* results */
 body {
   font-family: 'Open Sans', Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+h2 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 ```
 
@@ -101,6 +109,8 @@ body {
 
 the default fontstacks
 ```json
+  default: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
+
   // Sans-serif
   'Arial': 'Arial, "Helvetica Neue", Helvetica, sans-serif',
   'Arial Black': '"Arial Black", "Arial Bold", Gadget, sans-serif',

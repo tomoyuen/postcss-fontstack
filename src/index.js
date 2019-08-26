@@ -15,7 +15,7 @@ module.exports = postcss.plugin('fontstack', (options = {}) => {
 
         if (value.indexOf('fontstack(') !== -1) {
           let fontstackRequested = value.match(/\(([^)]+)\)/)[1].replace(/["']/g, '')
-          fontstackRequested = toTitleCase(fontstackRequested)
+          fontstackRequested = toTitleCase(fontstackRequested) || 'default'
           let fontstack = fontstacks[fontstackRequested]
           let firstFont = value.substr(0, value.indexOf('fontstack('))
           let newValue = firstFont + fontstack

@@ -5,3 +5,7 @@ body {
 h1 {
   font-family: fontstack('Lucida Sans Typewriter');
 }
+
+h2 {
+  font-family: fontstack('');
+}
