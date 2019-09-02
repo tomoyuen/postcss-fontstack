@@ -1,6 +1,7 @@
 "use strict";
 
 module.exports = {
+  default: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
   // Sans-serif 无衬线字体
   'Arial': 'Arial, "Helvetica Neue", Helvetica, sans-serif',
   'Arial Black': '"Arial Black", "Arial Bold", Gadget, sans-serif',

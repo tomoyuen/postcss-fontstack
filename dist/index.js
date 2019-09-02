@@ -22,7 +22,7 @@ module.exports = postcss.plugin('fontstack', function () {
 
         if (value.indexOf('fontstack(') !== -1) {
           var fontstackRequested = value.match(/\(([^)]+)\)/)[1].replace(/["']/g, '');
-          fontstackRequested = toTitleCase(fontstackRequested);
+          fontstackRequested = toTitleCase(fontstackRequested) || 'default';
           var fontstack = fontstacks[fontstackRequested];
           var firstFont = value.substr(0, value.indexOf('fontstack('));
           var newValue = firstFont + fontstack;
