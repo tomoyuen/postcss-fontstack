@@ -8,7 +8,6 @@
     "build": "babel src --out-dir dist",
     "lint": "eslint src/*.js"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tomoyuen/postcss-fontstack.git"
