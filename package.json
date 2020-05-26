@@ -54,5 +54,8 @@
   "jest": {
     "transform": {},
     "verbose": true
+  },
+  "engines": {
+    "node": ">=10"
   }
 }
