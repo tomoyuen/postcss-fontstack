@@ -1,4 +1,5 @@
 const postcss = require('postcss')
+
 let fontstacks = require('./fontstacks-config.js')
 
 function toTitleCase (str) {
@@ -12,8 +13,7 @@ module.exports = postcss.plugin('fontstack', (options = {}) => {
     root.walkRules(rule => {
       rule.walkDecls(decl => {
         let value = decl.value
-
-        if (value.indexOf('fontstack(') !== -1) {
+        if (value.includes('fontstack(')) {
           let fontstackRequested = value.match(/\(([^)]+)\)/)[1].replace(/["']/g, '')
           fontstackRequested = toTitleCase(fontstackRequested) || 'default'
           let fontstack = fontstacks[fontstackRequested]

@@ -20,7 +20,7 @@ module.exports = postcss.plugin('fontstack', function () {
       rule.walkDecls(function (decl) {
         var value = decl.value;
 
-        if (value.indexOf('fontstack(') !== -1) {
+        if (value.includes('fontstack(')) {
           var fontstackRequested = value.match(/\(([^)]+)\)/)[1].replace(/["']/g, '');
           fontstackRequested = toTitleCase(fontstackRequested) || 'default';
           var fontstack = fontstacks[fontstackRequested];
